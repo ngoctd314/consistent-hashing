@@ -37,3 +37,14 @@ Using the logic described above, adding a new server will only request redistrib
 When a server is removed, only a small fraction of keys request redistribution with consistent hashing.
 
 ### Two issues in the basic approach
+
+Consistent hashing algorithm
+
+- Map servers and keys on to the ring using a uniformly distributed hash function 
+- To find out which server a key is mapped to, go clockwise from the key position until the first server on the ring is found.
+
+### Virtual nodes
+
+A virtual node refers to the real node, and each server is represented by multiple virtual nodes on the ring. 
+
+Instead of using s0, we have s0_0, s0_1 and s0_2 to represent server 0 on the ring. With virtual nodes, each server is responsible for multiple partitions. Partitions with label s0 are managed by server 0. 
