@@ -44,6 +44,3 @@ func (r *Ring) RemoveNode(id string) {}
 func (r *Ring) Get(key string) string {
 	return ""
 }
-
-func main() {
-}
